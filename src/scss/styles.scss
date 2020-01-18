@@ -81,7 +81,7 @@ $warnin-hover:#EFDD07;
     }
     main{
         grid-area: main;
-        background:$gris-oscuro;
+        background:$dark;
 
     }
     aside{
@@ -93,6 +93,6 @@ $warnin-hover:#EFDD07;
 }
 
 
-@include form-add($gris,$gris,$accept,$accept-hover,$warnin,$warnin-hover);
+@include form-add($gris,$gris-oscuro,$accept,$accept-hover,$warnin,$warnin-hover);
 @include nav($gris-claro,$gris-oscuro,$dark,$accept);
 @include list($gris,$gris-oscuro,$dark,$accept,$warnin);

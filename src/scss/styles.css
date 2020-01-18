@@ -60,7 +60,7 @@
 }
 .cuerpo-grid main {
   grid-area: main;
-  background: #222222;
+  background: #191919;
 }
 .cuerpo-grid aside {
   grid-area: menu;
@@ -74,7 +74,7 @@
   display: block;
   align-items: center;
   padding: 0px;
-  background: #323232;
+  background: #222222;
 }
 .form-add .form-head {
   width: 100%;
@@ -83,13 +83,13 @@
   display: block;
   text-align: center;
   align-items: center;
-  background: #323232;
+  background: #222222;
 }
 .form-add .form-head .fa-box-open {
   font-size: xx-large;
 }
 .form-add form {
-  color: wheat;
+  color: white;
   display: block;
   align-items: center;
   padding: 10%;
