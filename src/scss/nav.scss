@@ -1,0 +1,97 @@
+@mixin nav($color1,$color2,$dark,$accept) {
+
+
+    .nav{
+        display: grid;
+        grid-template-columns: auto 600px;
+        box-shadow: 10px 10px 15px black;
+        height: auto;
+
+        .buttons{
+            display: grid;
+            grid-auto-flow: column;
+
+
+            button{
+                display: inline-block;
+                height: 100%;
+                background: $dark;
+                border: black solid 1px;
+
+
+            }
+        }
+        .buscador{
+            padding: 5px 20px ;
+            min-width: 300px;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            input{
+                display: inline-block;
+                width: 90%;
+                outline: none;
+                color: black;
+            }
+            i{
+                color: $accept;
+                background-color: $color1;
+            }
+            button{
+                width: 30px;
+                display: inline-block;
+                background: $color1;
+                border: $color1 2px solid;
+
+
+            }
+        }
+
+    }
+    @media screen and( max-width: 990px) {
+        .nav {
+            grid-template-columns: 1fr;
+            display: grid;
+            width: auto;
+            height: auto;
+            grid-template-rows: auto auto;
+            box-shadow: 10px 10px 15px black;
+
+            grid-template-areas: "botones botones" "buscador buscador";
+
+            .buttons{
+                width: available;
+                grid-area: botones;
+            }
+            .buscador{
+                grid-area: buscador;
+                width: available;
+
+
+            }
+        }
+    }
+    @media screen and( max-width: 768px) {
+        .nav {
+            display: grid;
+            width: auto;
+            height: auto;
+            grid-template-rows: auto auto;
+            box-shadow: 10px 10px 15px black;
+
+            grid-template-areas: "botones botones" "buscador buscador";
+
+            .buttons{
+                grid-area: botones;
+            }
+            .buscador{
+                grid-area: buscador;
+                width: 100%;
+                padding: 0;
+
+            }
+        }
+    }
+  
+}

@@ -1,0 +1,98 @@
+@import "form.scss";
+@import "nav.scss";
+@import "list.scss";
+
+$gris-oscuro:#222222;
+$gris:#323232;
+$gris-claro:#404040;
+$dark:#191919;
+$accept:#24CDDC ;
+$accept-hover: rgb(8, 255, 255);
+$warnin:#EFB607;
+$warnin-hover:#EFDD07;
+
+*{
+    margin: 0;
+    padding: 0;
+  
+    color: white;
+}
+
+#root{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    
+}
+#volverInicio{
+    font-size: xx-large;
+
+}
+
+
+.cuerpo-grid{
+
+    width: 100%;
+    display: grid;
+    height: 100%;
+    min-height: 100vh;
+    margin: 0 auto;
+    grid-template-columns: 250px auto;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "header header" "navigation navigation" "menu main";
+    border: solid 1px black;
+
+    header{
+        height: auto;
+        grid-area: header;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background: $accept;
+        box-shadow: 3px 3px 5px black;
+        .titulo{
+            color: black;
+            height: 100%;
+            width: 100%;
+            display: flex;
+
+            h1{
+                margin: 0;
+                width: auto;
+                display: inline-block;
+                padding: 5px;
+
+            }
+            i{
+                margin: 0 ;
+                font-size: xx-large;
+                color: black;
+                display: inline-block;
+                padding-top: 15px;
+            }
+
+        }
+        
+    }
+    nav{
+        background: $dark;
+        height: auto;
+        grid-area: navigation;
+    }
+    main{
+        grid-area: main;
+        background:$gris-oscuro;
+
+    }
+    aside{
+        grid-area: menu;
+        background: $gris;
+
+        position:relative;
+    }
+}
+
+
+@include form-add($gris,$gris,$accept,$accept-hover,$warnin,$warnin-hover);
+@include nav($gris-claro,$gris-oscuro,$dark,$accept);
+@include list($gris,$gris-oscuro,$dark,$accept,$warnin);
