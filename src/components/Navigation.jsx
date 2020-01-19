@@ -1,27 +1,86 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
 
 class Navigation extends Component {
+    constructor() {
+        super();
+        this.handleOnChange = this.handleOnChange.bind(this);
+        this.handleOnSubmit=this.handleOnSubmit.bind(this);
+        this.handleOnSubmitAll=this.handleOnSubmitAll.bind(this);
 
+        this.state={
+            cadena:""
+        }
+    }
+
+    handleOnChange(event) {
+        const {value} = event.target;
+        this.setState({cadena :value});
+        console.log(this.state.cadena);
+
+
+    }
+    handleOnSubmit(event){
+        event.preventDefault();
+
+        if(this.state.cadena) {
+            fetch("http://localhost:8080/AppTiendas/api/item/search/" + this.state.cadena, {
+                method: "get"
+            }).then((res) => {
+                return res.json();
+            })
+                .then((json) => {
+
+                    this.props.items(json);
+                });
+        }else {
+            fetch("http://localhost:8080/AppTiendas/api/item", {
+                method: "get"
+            }).then((res) => {
+                return res.json();
+            })
+                .then((json) => {
+
+                    this.props.items(json);
+                });
+
+        }
+    }
+
+    handleOnSubmitAll(event){
+        event.preventDefault();
+        fetch("http://localhost:8080/AppTiendas/api/item", {
+            method: "get"
+        }).then((res) => {
+            return res.json();
+        })
+            .then((json) => {
+
+                this.props.items(json);
+            });
+    }
     render() {
         return (
 
             <nav className="nav">
 
                 <div className="buttons">
-                    <button>prueba</button>
-                    <button>prueba</button>
-                    <button>prueba</button>
+
+                    <button type={"submit"} onClick={this.handleOnSubmitAll}>Mostrar Todo</button>
                 </div>
 
-                <div className="buscador">
-                    <input type="text" name="buscar" id="buscar" placeholder="Inserte Nombre De Item"></input>
-                    <button ><i className="fas fa-search"></i></button>
-                </div>
 
-            </nav>);
+                    <form onSubmit={this.handleOnSubmit} className="buscador">
+                        <input onChange={this.handleOnChange} type="text" name="buscar" id="buscar"
+                               placeholder="Inserte Nombre De Item"></input>
+                        <button type={"submit"}><i className="fas fa-search"></i></button>
+                    </form>
+
+
+            </nav>
+        );
     }
-
 }
+
 
 export default Navigation;

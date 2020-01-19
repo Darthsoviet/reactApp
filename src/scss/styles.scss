@@ -20,6 +20,7 @@ $warnin-hover: #EFDD07;
 }
 
 #root {
+
   margin: 0;
   padding: 0;
   height: 100%;
@@ -40,7 +41,7 @@ $warnin-hover: #EFDD07;
   height: 100%;
   min-height: 100vh;
   margin: 0 auto;
-  grid-template-columns: 250px auto;
+  grid-template-columns: min-content auto;
   grid-template-rows: auto auto auto auto;
   grid-template-areas: "header header" "navigation navigation" "menu main" "pie pie";
   border: solid 1px black;
@@ -76,6 +77,7 @@ $warnin-hover: #EFDD07;
         padding-top: 15px;
       }
 
+
     }
 
   }
@@ -87,20 +89,26 @@ $warnin-hover: #EFDD07;
   }
 
   main {
+    width: 100%;
+    height: available;
     grid-area: main;
     background: $dark;
+
 
   }
 
   aside {
+    background: $dark;
+    display: block;
     grid-area: menu;
-    background: $gris;
+    width: auto;
 
     position: relative;
   }
 
 }
-@include footer($gris,$gris-claro,$gris-oscuro,$dark,$warnin-hover);
+
+@include footer($gris, $gris-claro, $gris-oscuro, $dark, $warnin-hover);
 @include form-add($gris, $gris-oscuro, $accept, $accept-hover, $warnin, $warnin-hover);
 @include nav($gris-claro, $gris-oscuro, $dark, $accept);
 @include list($gris, $gris-oscuro, $dark, $accept, $warnin);
@@ -113,8 +121,8 @@ $warnin-hover: #EFDD07;
     height: 100%;
     min-height: 100vh;
     margin: 0 auto;
-    grid-template-columns: 250px auto;
-    grid-template-rows: 50px 100px auto 200px;
+    grid-template-columns: auto auto;
+    grid-template-rows: 50px 100px auto 300px;
     grid-template-areas: "header header" "navigation navigation" "menu main" "pie pie";
     border: solid 1px black;
 
@@ -157,19 +165,256 @@ $warnin-hover: #EFDD07;
       height: auto;
       grid-area: navigation;
     }
-
-    main {
-      grid-area: main;
-      background: $dark;
-
-    }
-
     aside {
       grid-area: menu;
       background: $gris;
+      height: 100%;
+      width: 100%;
 
-      position: relative;
     }
+    main {
+      grid-area: main;
+      background: $dark;
+      height: 100%;
+
+    }
+
+
   }
 
+}
+
+@media screen and(max-width: 768px) {
+  .cuerpo-grid {
+    width: 100%;
+    display: grid;
+    height: 100%;
+    min-height: 100vh;
+    margin: 0 auto;
+    grid-template-rows: auto auto auto 300px;
+    grid-template-areas: "header header" "navigation navigation" "menu main" "pie pie";
+    border: solid 1px black;
+
+    footer {
+      footer {
+        height: 100%;
+        width: 100%;
+        grid-area: pie;
+        background: linear-gradient(90grad, $gris, $gris-oscuro, $dark, black);
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+
+        .social {
+          text-align: center;
+          height: 100%;
+
+          h1 {
+            display: block;
+            width: 100%;
+            font-size: xx-large;
+          }
+
+          i {
+            display: block;
+            width: 100%;
+            font-size: xx-large;
+          }
+
+          i:hover {
+            color: #1528ff;
+          }
+
+          p {
+            display: block;
+            width: 100%;
+            font-size: larger;
+            font-family: Arial;
+          }
+
+          p:hover {
+            color: #1528ff;
+          }
+
+
+        }
+
+        .tecnologias {
+          display: block;
+          text-align: center;
+          height: 100%;
+
+          .container-tec {
+            display: grid;
+            height: auto;
+            width: auto;
+            grid-template-columns: 1fr 1fr;
+
+            h4 {
+              display: block;
+              padding: 0;
+              margin: 0;
+            }
+
+            .interno {
+              height: auto;
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+
+              .logos {
+                display: block;
+
+                i {
+
+                  display: block;
+                  padding: 2px;
+                  font-size: smaller;
+                }
+
+                i:hover {
+                  color: $warnin-hover;
+                }
+
+
+              }
+
+              p {
+                font-size: 5px;
+                padding: 20px;
+              }
+
+              p:hover {
+                color: $warnin-hover;
+                padding: 5px;
+                font-size: 8px;
+              }
+            }
+          }
+
+        }
+
+
+      }
+
+
+    }
+  }
+  @media screen and(max-width: 411px) {
+    .cuerpo-grid {
+      width: 100%;
+      display: grid;
+      height: 100%;
+      min-height: 100vh;
+      margin: 0 auto;
+
+      grid-template-rows: auto auto auto 300px;
+      grid-template-areas: "header header" "navigation navigation" "menu main" "pie pie";
+      border: solid 1px black;
+
+
+    }
+    footer {
+      footer {
+        height: 100%;
+        width: 100%;
+        grid-area: pie;
+        background: linear-gradient(90grad, $gris, $gris-oscuro, $dark, black);
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+
+        .social {
+          text-align: center;
+          height: 100%;
+
+          h1 {
+            display: block;
+            width: 100%;
+            font-size: xx-large;
+          }
+
+          i {
+            display: block;
+            width: 100%;
+            font-size: xx-large;
+          }
+
+          i:hover {
+            color: #1528ff;
+          }
+
+          p {
+            display: block;
+            width: 100%;
+            font-size: larger;
+            font-family: Arial;
+          }
+
+          p:hover {
+            color: #1528ff;
+          }
+
+
+        }
+
+        .tecnologias {
+          display: block;
+          text-align: center;
+          height: 100%;
+
+          .container-tec {
+            display: grid;
+            height: auto;
+            width: auto;
+            grid-template-columns: 1fr 1fr;
+
+            h4 {
+              display: block;
+              padding: 0;
+              margin: 0;
+            }
+
+            .interno {
+              height: auto;
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+
+              .logos {
+                display: block;
+
+                i {
+
+                  display: block;
+                  padding: 2px;
+                  font-size: smaller;
+                }
+
+                i:hover {
+                  color: $warnin-hover;
+                }
+
+
+              }
+
+              p {
+                font-size: 5px;
+                padding: 20px;
+              }
+
+              p:hover {
+                color: $warnin-hover;
+                padding: 5px;
+                font-size: 8px;
+              }
+            }
+          }
+
+        }
+
+
+      }
+
+
+    }
+  }
 }

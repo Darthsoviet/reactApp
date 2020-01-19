@@ -45,10 +45,11 @@
     .tecnologias {
       display: block;
       text-align: center;
+      height: 100%;
 
       .container-tec {
         display: grid;
-        height: 100%;
+        height: auto;
         width: auto;
         grid-template-columns: 1fr 1fr;
 
@@ -59,6 +60,7 @@
         }
 
         .interno {
+          height: auto;
           display: grid;
           grid-template-columns: 1fr 1fr;
 
@@ -66,8 +68,9 @@
             display: block;
 
             i {
+
               display: block;
-              padding: 5px;
+              padding: 2px;
               font-size: x-large;
             }
             i:hover{
@@ -77,8 +80,8 @@
 
           }
           p{
-            font-size: 5px;
-            padding: 30px;
+            font-size: 15px;
+            padding: 20px;
           }
           p:hover{
             color: $warnin-hover;
@@ -92,6 +95,7 @@
 
 
   }
+
 
 
 }

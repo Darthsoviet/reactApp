@@ -21,7 +21,7 @@
   height: 100%;
   min-height: 100vh;
   margin: 0 auto;
-  grid-template-columns: 250px auto;
+  grid-template-columns: min-content auto;
   grid-template-rows: auto auto auto auto;
   grid-template-areas: "header header" "navigation navigation" "menu main" "pie pie";
   border: solid 1px black;
@@ -59,12 +59,16 @@
   grid-area: navigation;
 }
 .cuerpo-grid main {
+  width: 100%;
+  height: available;
   grid-area: main;
   background: #191919;
 }
 .cuerpo-grid aside {
+  background: #191919;
+  display: block;
   grid-area: menu;
-  background: #323232;
+  width: auto;
   position: relative;
 }
 
@@ -105,10 +109,11 @@ footer .social p:hover {
 footer .tecnologias {
   display: block;
   text-align: center;
+  height: 100%;
 }
 footer .tecnologias .container-tec {
   display: grid;
-  height: 100%;
+  height: auto;
   width: auto;
   grid-template-columns: 1fr 1fr;
 }
@@ -118,6 +123,7 @@ footer .tecnologias .container-tec h4 {
   margin: 0;
 }
 footer .tecnologias .container-tec .interno {
+  height: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
@@ -126,15 +132,15 @@ footer .tecnologias .container-tec .interno .logos {
 }
 footer .tecnologias .container-tec .interno .logos i {
   display: block;
-  padding: 5px;
+  padding: 2px;
   font-size: x-large;
 }
 footer .tecnologias .container-tec .interno .logos i:hover {
   color: #EFDD07;
 }
 footer .tecnologias .container-tec .interno p {
-  font-size: 5px;
-  padding: 30px;
+  font-size: 15px;
+  padding: 20px;
 }
 footer .tecnologias .container-tec .interno p:hover {
   color: #EFDD07;
@@ -142,13 +148,38 @@ footer .tecnologias .container-tec .interno p:hover {
   font-size: 8px;
 }
 
-.form-add {
+.form-add-off {
+  height: 100%;
+  display: block;
+  align-items: center;
+  padding: 0px;
+  width: 50px;
+  margin: 0px;
+  margin: 1px;
+  background: #222222;
+}
+.form-add-off .btn-toggle-off {
+  display: block;
+  background: #323232;
   width: 100%;
+  border: solid #323232;
+  border-radius: 3px;
+}
+
+.form-add {
+  width: 250px;
   height: 100%;
   display: block;
   align-items: center;
   padding: 0px;
   background: #222222;
+}
+.form-add .btn-toggle-on {
+  display: block;
+  background: #323232;
+  width: 100%;
+  border: solid #323232;
+  border-radius: 3px;
 }
 .form-add .form-head {
   width: 100%;
@@ -188,7 +219,7 @@ footer .tecnologias .container-tec .interno p:hover {
   display: block;
   width: 100%;
   border-bottom: 1px solid white;
-  margin-bottom: 10px;
+  margin-bottom: 1px;
 }
 .form-add form input:hover {
   border-bottom: 1px solid #24CDDC;
@@ -196,11 +227,11 @@ footer .tecnologias .container-tec .interno p:hover {
 .form-add form input:hover::placeholder {
   color: #24CDDC;
 }
-.form-add form div {
+.form-add form .btn-g {
   height: auto;
   padding-top: 20px;
 }
-.form-add form div button {
+.form-add form .btn-g button {
   display: block;
   background: transparent;
   border-radius: 30px;
@@ -209,23 +240,23 @@ footer .tecnologias .container-tec .interno p:hover {
   text-align: center;
   padding-bottom: 3px;
 }
-.form-add form div .btn-submit {
+.form-add form .btn-g .btn-submit {
   outline: none;
   border: solid 1px #24CDDC;
   color: #24CDDC;
 }
-.form-add form div .btn-submit:hover {
+.form-add form .btn-g .btn-submit:hover {
   background: #24CDDC;
   color: white;
   border: #08ffff 2px solid;
   box-shadow: 2px 2px 5px #08ffff, 2px 2px 5px black;
 }
-.form-add form div .btn-reset {
+.form-add form .btn-g .btn-reset {
   outline: none;
   border: solid 1px #EFB607;
   color: #EFB607;
 }
-.form-add form div .btn-reset:hover {
+.form-add form .btn-g .btn-reset:hover {
   background: #EFB607;
   color: white;
   border: #EFDD07 2px solid;
@@ -336,6 +367,8 @@ li {
 }
 
 .lista-grid {
+  height: 100%;
+  width: 100%;
   padding: 15px 15px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -491,6 +524,26 @@ li {
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 15px 15px;
   }
+  .lista-grid .item-card {
+    max-width: 300px;
+  }
+}
+@media screen and (max-width: 580px) {
+  .lista-grid {
+    padding: 15px 15px;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 15px 15px;
+  }
+  .lista-grid .item-card {
+    max-width: auto;
+  }
+}
+@media screen and (max-width: 411px) {
+  .lista-grid {
+    padding: 15px 15px;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 15px 15px;
+  }
 }
 @media only screen and (width: 1024px) and (height: 1366px) {
   .lista-grid {
@@ -507,8 +560,8 @@ li {
     height: 100%;
     min-height: 100vh;
     margin: 0 auto;
-    grid-template-columns: 250px auto;
-    grid-template-rows: 50px 100px auto 200px;
+    grid-template-columns: auto auto;
+    grid-template-rows: 50px 100px auto 300px;
     grid-template-areas: "header header" "navigation navigation" "menu main" "pie pie";
     border: solid 1px black;
   }
@@ -544,14 +597,193 @@ li {
     height: auto;
     grid-area: navigation;
   }
-  .cuerpo-grid main {
-    grid-area: main;
-    background: #191919;
-  }
   .cuerpo-grid aside {
     grid-area: menu;
     background: #323232;
-    position: relative;
+    height: 100%;
+    width: 100%;
+  }
+  .cuerpo-grid main {
+    grid-area: main;
+    background: #191919;
+    height: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .cuerpo-grid {
+    width: 100%;
+    display: grid;
+    height: 100%;
+    min-height: 100vh;
+    margin: 0 auto;
+    grid-template-rows: auto auto auto 300px;
+    grid-template-areas: "header header" "navigation navigation" "menu main" "pie pie";
+    border: solid 1px black;
+  }
+  .cuerpo-grid footer footer {
+    height: 100%;
+    width: 100%;
+    grid-area: pie;
+    background: linear-gradient(90grad, #323232, #222222, #191919, black);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .cuerpo-grid footer footer .social {
+    text-align: center;
+    height: 100%;
+  }
+  .cuerpo-grid footer footer .social h1 {
+    display: block;
+    width: 100%;
+    font-size: xx-large;
+  }
+  .cuerpo-grid footer footer .social i {
+    display: block;
+    width: 100%;
+    font-size: xx-large;
+  }
+  .cuerpo-grid footer footer .social i:hover {
+    color: #1528ff;
+  }
+  .cuerpo-grid footer footer .social p {
+    display: block;
+    width: 100%;
+    font-size: larger;
+    font-family: Arial;
+  }
+  .cuerpo-grid footer footer .social p:hover {
+    color: #1528ff;
+  }
+  .cuerpo-grid footer footer .tecnologias {
+    display: block;
+    text-align: center;
+    height: 100%;
+  }
+  .cuerpo-grid footer footer .tecnologias .container-tec {
+    display: grid;
+    height: auto;
+    width: auto;
+    grid-template-columns: 1fr 1fr;
+  }
+  .cuerpo-grid footer footer .tecnologias .container-tec h4 {
+    display: block;
+    padding: 0;
+    margin: 0;
+  }
+  .cuerpo-grid footer footer .tecnologias .container-tec .interno {
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .cuerpo-grid footer footer .tecnologias .container-tec .interno .logos {
+    display: block;
+  }
+  .cuerpo-grid footer footer .tecnologias .container-tec .interno .logos i {
+    display: block;
+    padding: 2px;
+    font-size: smaller;
+  }
+  .cuerpo-grid footer footer .tecnologias .container-tec .interno .logos i:hover {
+    color: #EFDD07;
+  }
+  .cuerpo-grid footer footer .tecnologias .container-tec .interno p {
+    font-size: 5px;
+    padding: 20px;
+  }
+  .cuerpo-grid footer footer .tecnologias .container-tec .interno p:hover {
+    color: #EFDD07;
+    padding: 5px;
+    font-size: 8px;
+  }
+}
+@media screen and (max-width: 768px) and (max-width: 411px) {
+  .cuerpo-grid {
+    width: 100%;
+    display: grid;
+    height: 100%;
+    min-height: 100vh;
+    margin: 0 auto;
+    grid-template-rows: auto auto auto 300px;
+    grid-template-areas: "header header" "navigation navigation" "menu main" "pie pie";
+    border: solid 1px black;
+  }
+
+  footer footer {
+    height: 100%;
+    width: 100%;
+    grid-area: pie;
+    background: linear-gradient(90grad, #323232, #222222, #191919, black);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  footer footer .social {
+    text-align: center;
+    height: 100%;
+  }
+  footer footer .social h1 {
+    display: block;
+    width: 100%;
+    font-size: xx-large;
+  }
+  footer footer .social i {
+    display: block;
+    width: 100%;
+    font-size: xx-large;
+  }
+  footer footer .social i:hover {
+    color: #1528ff;
+  }
+  footer footer .social p {
+    display: block;
+    width: 100%;
+    font-size: larger;
+    font-family: Arial;
+  }
+  footer footer .social p:hover {
+    color: #1528ff;
+  }
+  footer footer .tecnologias {
+    display: block;
+    text-align: center;
+    height: 100%;
+  }
+  footer footer .tecnologias .container-tec {
+    display: grid;
+    height: auto;
+    width: auto;
+    grid-template-columns: 1fr 1fr;
+  }
+  footer footer .tecnologias .container-tec h4 {
+    display: block;
+    padding: 0;
+    margin: 0;
+  }
+  footer footer .tecnologias .container-tec .interno {
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  footer footer .tecnologias .container-tec .interno .logos {
+    display: block;
+  }
+  footer footer .tecnologias .container-tec .interno .logos i {
+    display: block;
+    padding: 2px;
+    font-size: smaller;
+  }
+  footer footer .tecnologias .container-tec .interno .logos i:hover {
+    color: #EFDD07;
+  }
+  footer footer .tecnologias .container-tec .interno p {
+    font-size: 5px;
+    padding: 20px;
+  }
+  footer footer .tecnologias .container-tec .interno p:hover {
+    color: #EFDD07;
+    padding: 5px;
+    font-size: 8px;
   }
 }
 
