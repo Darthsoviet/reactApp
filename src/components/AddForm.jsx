@@ -53,7 +53,7 @@ class AddForm extends Component {
                         <label htmlFor="nombre">Item</label>
                         <input type="text" name="nombre" id="nombre" required placeholder="Item" onChange={this.handleInput}></input>
                         <label htmlFor="descripcion">Descripcion</label>
-                        <input type="text" name="descripcion" id="descripcion" required placeholder="Item" onChange={this.handleInput}></input>
+                        <input type="text" name="descripcion" id="descripcion" required placeholder="Descripcion" onChange={this.handleInput}></input>
                         <label htmlFor="precio">Precio</label>
                         <input type="number" name="precio" id="precio" required placeholder="Precio" step="0.01" onChange={this.handleInput}></input>
                         <label htmlFor="cantidad">Cantidad</label>
@@ -64,10 +64,10 @@ class AddForm extends Component {
                         </div>
                     </form>
                 </div>
-
         );
 
     }
+
 }
 
 export default AddForm;

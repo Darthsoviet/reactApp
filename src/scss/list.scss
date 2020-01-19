@@ -3,6 +3,9 @@
 
     li{
         list-style: none;
+        display: block;
+        height: auto;
+        width: 100%;
     }
     .lista-grid {
         padding: 15px 15px;
@@ -18,7 +21,7 @@
 
             width: 100%;
             height: auto;
-            background: black;
+            background: $color2;
             display: block;
             box-shadow: 5px 5px 6px black;
 
@@ -85,13 +88,14 @@
                 display: block;
                 padding: 0;
                 border: none;
+                background: black;
 
 
                 .item-card-foot-precio{
                     display: inline-block;
                     text-align: center;
                     height: 100%;
-                    width: 70%;
+                    width: 50%;
                     color: greenyellow;
                     word-wrap: break-word;
                     
@@ -110,6 +114,17 @@
                         display: inline-block;
                     }
                 }
+                .contenedor-mod{
+                    display: inline-block;
+                    width: 20%;
+                    height: 100%;padding: 5px;
+                    button{
+                        width: 100%;
+                        height: 95%;
+                        background: transparent;
+                        border: transparent;
+                    }
+                }
                 .contenedor-btn{
                     display: inline-block;
                     width: 30%;
@@ -119,7 +134,7 @@
                     button{
                         display: block;
                         width: 100%;
-                        height: 90%;
+                        height: 95%;
                         background:$danger;
                         border:none;
 
@@ -128,13 +143,40 @@
                 }
 
             }
+            .form-mod{
+
+                input{
+                    background: transparent;
+                    display: block;
+                    width: 100%;
+                    border: none;
+                    border-bottom: $accept 1px solid;
+                    margin: 3px;
+                }
+                input::placeholder{
+                    text-align: center;
+                }
+                input:hover::placeholder{
+                    color: $accept;
+                }
+                button{
+                    display: block;
+                    width: 100%;
+                    background: transparent;
+                    border: 2px #adff2f solid;
+                    color: greenyellow;
+                }
+
+            }
 
         }
+
 
         .item-card:hover{
             box-shadow: 5px 5px 6px $accept;
         }
     }
+
     @media screen and(max-width: 1200px) {
         .lista-grid {
             padding: 15px 15px;
@@ -156,11 +198,20 @@
     @media screen and(max-width: 768px) {
         .lista-grid {
             padding: 15px 15px;
-
-            grid-template-columns:  auto;
+            grid-template-columns:  repeat(1, 1fr);
             grid-gap: 15px 15px;
 
         }
     }
+    @media only screen and (width: 1024px)
+    and (height: 1366px) {
+        .lista-grid {
+            padding: 15px 15px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 15px 15px;
 
+
+        }
+    }
 }

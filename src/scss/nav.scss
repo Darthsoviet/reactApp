@@ -93,5 +93,28 @@
             }
         }
     }
+    //ipad pro
+    @media only screen and (width: 1024px)
+    and (height: 1366px){
+        .nav {
+            display: grid;
+            width: auto;
+            height: 50px;
+            grid-template-rows: auto auto;
+            box-shadow: 10px 10px 15px black;
+            grid-template-areas: "botones botones" "buscador buscador";
+
+
+            .buttons{
+                grid-area: botones;
+            }
+            .buscador{
+                grid-area: buscador;
+                width: 100%;
+                padding: 0;
+
+            }
+        }
+    }
+    }
   
-}
