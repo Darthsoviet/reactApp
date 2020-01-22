@@ -100,7 +100,6 @@
       }
 
 
-
       .item-card-content {
         background: $color1;
 
@@ -116,7 +115,6 @@
         overflow: auto;
 
       }
-
 
 
       .item-card-foot {
@@ -225,6 +223,30 @@
       box-shadow: 5px 5px 6px $accept;
     }
   }
+  @media only screen and (width: 1024px) and (height: 1366px) {
+    .lista-grid {
+      padding: 15px 15px;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 15px 15px;
+
+      .item-card {
+        max-width: 300px;
+      }
+
+    }
+  }
+  @media only screen and (width: 1366px) and (height: 1024px) {
+    .lista-grid {
+      padding: 15px 15px;
+      grid-template-columns: repeat(5, 1fr);
+      grid-gap: 15px 15px;
+
+      .item-card {
+        max-width: 300px;
+      }
+
+    }
+  }
 
   @media screen and(max-width: 1200px) {
     .lista-grid {
@@ -238,15 +260,17 @@
 
     }
   }
+
+
   @media screen and(max-width: 990px) {
     .lista-grid {
       padding: 15px 15px;
-
       grid-template-columns: repeat(3, 1fr);
       grid-gap: 15px 15px;
 
     }
   }
+
   @media screen and(max-width: 768px) {
     .lista-grid {
       padding: 15px 15px;
@@ -254,49 +278,41 @@
       grid-gap: 15px 15px;
 
       .item-card {
-        overflow: hidden;
-        max-width: content-box;
+
+        max-width: 100%;
         min-width: 200px;
 
 
       }
     }
-    @media screen and(max-width: 580px) {
-      .lista-grid {
-        padding: 15px 15px;
-        grid-template-columns: repeat(1, 1fr);
+  }
 
-        grid-gap: 15px 15px;
+  @media screen and(max-width: 580px) {
+    .lista-grid {
+      padding: 15px 15px;
+      grid-template-columns: repeat(1, 1fr);
 
-        .item-card {
+      grid-gap: 15px 15px;
 
-          max-width: auto;
-          min-width: 200px;
-        }
+      .item-card {
 
+        min-width: 200px;
       }
+
     }
-    @media screen and(max-width: 411px) {
-      .lista-grid {
+  }
 
-        padding: 15px 15px;
-        grid-template-columns: repeat(1, 1fr);
-        grid-gap: 15px 15px;
+  @media screen and(max-width: 411px) {
+    .lista-grid {
 
-        .item-card {
-          min-width: 200px;
-        }
-      }
-    }
-    @media only screen and (width: 1024px) and (height: 1366px) {
-      .lista-grid {
-        padding: 15px 15px;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 15px 15px;
+      padding: 15px 15px;
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 15px 15px;
 
-
+      .item-card {
+        min-width: 200px;
       }
     }
   }
+
 }

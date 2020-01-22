@@ -569,6 +569,26 @@ li {
   box-shadow: 5px 5px 6px #CFE90E;
 }
 
+@media only screen and (width: 1024px) and (height: 1366px) {
+  .lista-grid {
+    padding: 15px 15px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px 15px;
+  }
+  .lista-grid .item-card {
+    max-width: 300px;
+  }
+}
+@media only screen and (width: 1366px) and (height: 1024px) {
+  .lista-grid {
+    padding: 15px 15px;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 15px 15px;
+  }
+  .lista-grid .item-card {
+    max-width: 300px;
+  }
+}
 @media screen and (max-width: 1200px) {
   .lista-grid {
     padding: 15px 15px;
@@ -593,23 +613,11 @@ li {
     grid-gap: 15px 15px;
   }
   .lista-grid .item-card {
-    overflow: hidden;
-    max-width: content-box;
+    max-width: 100%;
     min-width: 200px;
   }
 }
-@media screen and (max-width: 768px) and (max-width: 580px) {
-  .lista-grid {
-    padding: 15px 15px;
-    grid-template-columns: repeat(1, 1fr);
-    grid-gap: 15px 15px;
-  }
-  .lista-grid .item-card {
-    max-width: auto;
-    min-width: 200px;
-  }
-}
-@media screen and (max-width: 768px) and (max-width: 411px) {
+@media screen and (max-width: 580px) {
   .lista-grid {
     padding: 15px 15px;
     grid-template-columns: repeat(1, 1fr);
@@ -619,12 +627,14 @@ li {
     min-width: 200px;
   }
 }
-@media only screen and (max-width: 768px) and (width: 1024px) and (height: 1366px) {
+@media screen and (max-width: 411px) {
   .lista-grid {
     padding: 15px 15px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     grid-gap: 15px 15px;
+  }
+  .lista-grid .item-card {
+    min-width: 200px;
   }
 }
 @media only screen and (width: 1024px) and (height: 1366px) {

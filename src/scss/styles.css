@@ -22,7 +22,7 @@
   min-height: 100vh;
   margin: 0 auto;
   grid-template-columns: min-content auto;
-  grid-template-rows: auto auto auto auto;
+  grid-template-rows: auto auto minmax(80vh, auto) auto;
   grid-template-areas: "header header" "navigation navigation" "menu main" "pie pie";
   border: solid 1px black;
 }
@@ -569,6 +569,26 @@ li {
   box-shadow: 5px 5px 6px #24CDDC;
 }
 
+@media only screen and (width: 1024px) and (height: 1366px) {
+  .lista-grid {
+    padding: 15px 15px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px 15px;
+  }
+  .lista-grid .item-card {
+    max-width: 300px;
+  }
+}
+@media only screen and (width: 1366px) and (height: 1024px) {
+  .lista-grid {
+    padding: 15px 15px;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 15px 15px;
+  }
+  .lista-grid .item-card {
+    max-width: 300px;
+  }
+}
 @media screen and (max-width: 1200px) {
   .lista-grid {
     padding: 15px 15px;
@@ -593,23 +613,11 @@ li {
     grid-gap: 15px 15px;
   }
   .lista-grid .item-card {
-    overflow: hidden;
-    max-width: content-box;
+    max-width: 100%;
     min-width: 200px;
   }
 }
-@media screen and (max-width: 768px) and (max-width: 580px) {
-  .lista-grid {
-    padding: 15px 15px;
-    grid-template-columns: repeat(1, 1fr);
-    grid-gap: 15px 15px;
-  }
-  .lista-grid .item-card {
-    max-width: auto;
-    min-width: 200px;
-  }
-}
-@media screen and (max-width: 768px) and (max-width: 411px) {
+@media screen and (max-width: 580px) {
   .lista-grid {
     padding: 15px 15px;
     grid-template-columns: repeat(1, 1fr);
@@ -619,12 +627,14 @@ li {
     min-width: 200px;
   }
 }
-@media only screen and (max-width: 768px) and (width: 1024px) and (height: 1366px) {
+@media screen and (max-width: 411px) {
   .lista-grid {
     padding: 15px 15px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     grid-gap: 15px 15px;
+  }
+  .lista-grid .item-card {
+    min-width: 200px;
   }
 }
 @media only screen and (width: 1024px) and (height: 1366px) {
@@ -635,7 +645,7 @@ li {
     min-height: 100vh;
     margin: 0 auto;
     grid-template-columns: min-content auto;
-    grid-template-rows: 50px 100px auto 300px;
+    grid-template-rows: 50px 100px minmax(80vh, auto) 300px;
     grid-template-areas: "header header" "navigation navigation" "menu main" "pie pie";
     border: solid 1px black;
   }
@@ -692,7 +702,7 @@ li {
     min-height: 100%;
     margin: 0 auto;
     grid-template-columns: min-content auto;
-    grid-template-rows: 50px 100px auto 300px;
+    grid-template-rows: 50px 100px minmax(80vh, auto) 300px;
     grid-template-areas: "header header" "navigation navigation" "menu main" "pie pie";
     border: solid 1px black;
   }
@@ -748,7 +758,7 @@ li {
     min-height: 100vh;
     margin: 0 auto;
     grid-template-columns: min-content auto;
-    grid-template-rows: auto auto auto 300px;
+    grid-template-rows: auto auto minmax(80vh, auto) 300px;
     grid-template-areas: "header header" "navigation navigation" "menu main" "pie pie";
     border: solid 1px black;
   }
@@ -829,14 +839,14 @@ li {
     font-size: 8px;
   }
 }
-@media screen and (max-width: 768px) and (max-width: 411px) {
+@media screen and (max-width: 411px) {
   .cuerpo-grid {
     width: 100%;
     display: grid;
     height: 100%;
     min-height: 100vh;
     margin: 0 auto;
-    grid-template-rows: auto auto auto 300px;
+    grid-template-rows: auto auto minmax(80vh, auto) 300px;
     grid-template-areas: "header header" "navigation navigation" "menu main" "pie pie";
     border: solid 1px black;
   }
