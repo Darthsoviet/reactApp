@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import ModForm from "./ModForm";
 
 export class ItemCard extends Component {
@@ -8,10 +8,32 @@ export class ItemCard extends Component {
         this.state = {
             show: false
         }
+        this.colorCantidad = this.colorCantidad.bind(this);
+
+    }
+
+
+    colorCantidad(cantidad) {
+
+        // eslint-disable-next-line default-case
+
+        if (cantidad < 5) {
+            return {color: "#EE2408"};
+        } else if (cantidad >= 5 && cantidad < 10) {
+            return {color: "#EE9708"};
+        } else if (cantidad >= 10 && cantidad < 25) {
+            return {color: "#D2EE08"};
+        } else if (cantidad >= 25 && cantidad < 50) {
+            return {color: "#5FEE08"};
+        } else if (cantidad >= 50) {
+            return {color: "#08EE24"};
+        }
+        return null;
+
     }
 
     handleOnClick(e) {
-        console.log(this.props.index);
+
         this.props.eliminar(this.props.index);
 
     }
@@ -26,12 +48,22 @@ export class ItemCard extends Component {
                 <li>
                     <article className="item-card">
                         <div className="item-card-titulo">
+
                             <h1>
                                 {this.props.item.nombre}
                             </h1>
-                            <div className="item-card-contador">
+
+
+                            <div className="item-card-contador" style={this.colorCantidad(this.props.item.cantidad)}>
+
                                 {this.props.item.cantidad}
                             </div>
+                        </div>
+                        <div className="item-card-id">
+                            <h1>
+                                ID #{this.props.item.idItem}
+                            </h1>
+
                         </div>
                         <p className="item-card-content">
 
@@ -53,23 +85,35 @@ export class ItemCard extends Component {
                             </div>
 
                         </div>
-                        <ModForm update={this.props.update} index={this.props.index} item={this.props.item}/>
+                        <ModForm update={this.props.update} index={this.props.index}
+                                 nombre={this.props.item.nombre}
+                                 cantidad={this.props.item.cantidad}
+                                 precio={this.props.item.precio}
+                                 descripcion={this.props.item.descripcion}
+                                 idItem={this.props.item.idItem}/>
 
                     </article>
                 </li>
 
             );
-        }else {
+        } else {
             return (<li>
                 <article className="item-card">
                     <div className="item-card-titulo">
                         <h1>
                             {this.props.item.nombre}
                         </h1>
-                        <div className="item-card-contador">
+                        <div className="item-card-contador" style={this.colorCantidad(this.props.item.cantidad)}>
                             {this.props.item.cantidad}
                         </div>
                     </div>
+                    <div className="item-card-id">
+                        <h1>
+                            ID #{this.props.item.idItem}
+                        </h1>
+
+                    </div>
+
                     <p className="item-card-content">
 
                         {this.props.item.descripcion}
@@ -98,4 +142,5 @@ export class ItemCard extends Component {
     }
 
 }
+
 export default ItemCard;

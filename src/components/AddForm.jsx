@@ -37,10 +37,10 @@ class AddForm extends Component {
     handleSubmit(evento) {
         //ELIMINA COMPORTAMIENTO REFRESH DEFAUL DE SUBMIT
         evento.preventDefault();
-        var nombre = this.state.nombre;
+        var nombre = this.state.nombre.trim();
         var precio = this.state.precio;
         var cantidad = this.state.cantidad;
-        var descripcion=this.state.descripcion;
+        var descripcion=this.state.descripcion.trim();
         var item = new Item(nombre, precio,descripcion, cantidad);
         /*AJAX POST A REST JAVA*/
         fetch("http://localhost:8080/AppTiendas/api/item",

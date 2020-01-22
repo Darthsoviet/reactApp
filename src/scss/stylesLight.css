@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  color: white;
+  color: black;
 }
 
 #root {
@@ -31,7 +31,7 @@
   grid-area: header;
   background-repeat: no-repeat;
   background-size: cover;
-  background: #24CDDC;
+  background: #CFE90E;
   box-shadow: 3px 3px 5px black;
 }
 .cuerpo-grid header .titulo {
@@ -54,7 +54,7 @@
   padding-top: 15px;
 }
 .cuerpo-grid nav {
-  background: #191919;
+  background: white;
   height: auto;
   grid-area: navigation;
 }
@@ -62,10 +62,10 @@
   width: 100%;
   height: available;
   grid-area: main;
-  background: #191919;
+  background: white;
 }
 .cuerpo-grid aside {
-  background: #191919;
+  background: white;
   display: block;
   grid-area: menu;
   width: auto;
@@ -76,7 +76,7 @@ footer {
   height: 100%;
   width: 100%;
   grid-area: pie;
-  background: linear-gradient(90grad, #323232, #222222, #191919, black);
+  background: linear-gradient(90grad, white, #0E88E4, white, black);
   display: grid;
   grid-template-columns: 1fr 4fr;
 }
@@ -136,14 +136,14 @@ footer .tecnologias .container-tec .interno .logos i {
   font-size: x-large;
 }
 footer .tecnologias .container-tec .interno .logos i:hover {
-  color: #EFDD07;
+  color: #FFBE03;
 }
 footer .tecnologias .container-tec .interno p {
   font-size: 8px;
   padding: 20px;
 }
 footer .tecnologias .container-tec .interno p:hover {
-  color: #EFDD07;
+  color: #FFBE03;
   padding: 5px;
   font-size: 8px;
 }
@@ -156,16 +156,16 @@ footer .tecnologias .container-tec .interno p:hover {
   width: 50px;
   margin: 0px;
   margin: 1px;
-  background: #222222;
+  background: #0E88E4;
 }
 .form-add-off .btn-toggle-off {
   height: 40px;
   display: block;
-  background: #323232;
+  background: white;
   width: 100%;
-  border: solid #323232;
+  border: solid white;
   border-radius: 3px;
-  border-bottom: 2px solid #EFDD07;
+  border-bottom: 2px solid #FFBE03;
 }
 
 .form-add {
@@ -174,31 +174,31 @@ footer .tecnologias .container-tec .interno p:hover {
   display: block;
   align-items: center;
   padding: 0px;
-  background: #222222;
+  background: #0E88E4;
 }
 .form-add .btn-toggle-on {
   height: 40px;
   display: block;
-  background: #323232;
+  background: white;
   width: 100%;
-  border: solid #323232;
-  border-bottom: 2px solid #EFDD07;
+  border: solid white;
+  border-bottom: 2px solid #FFBE03;
   border-radius: 3px;
 }
 .form-add .form-head {
   width: 100%;
   height: auto;
-  color: white;
+  color: black;
   display: block;
   text-align: center;
   align-items: center;
-  background: #222222;
+  background: #0E88E4;
 }
 .form-add .form-head .fa-box-open {
   font-size: xx-large;
 }
 .form-add form {
-  color: white;
+  color: black;
   display: block;
   align-items: center;
   padding: 10%;
@@ -215,29 +215,29 @@ footer .tecnologias .container-tec .interno p:hover {
   align-content: center;
   text-align: center;
   font-size: larger;
-  color: #24CDDC;
+  color: #CFE90E;
 }
 .form-add form input {
   background: transparent;
   border: none;
   display: block;
   width: 100%;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid black;
   margin-bottom: 1px;
 }
 .form-add form input:hover {
-  border-bottom: 1px solid #24CDDC;
+  border-bottom: 1px solid #CFE90E;
 }
 .form-add form input:hover::placeholder {
-  color: #24CDDC;
+  color: #CFE90E;
 }
 .form-add form input:invalid {
-  color: #EFDD07;
-  border-bottom: solid 1px #EFDD07;
+  color: #FFBE03;
+  border-bottom: solid 1px #FFBE03;
 }
 .form-add form input:valid {
-  color: #08ffff;
-  border-bottom: solid 1px #08ffff;
+  color: #8E427A;
+  border-bottom: solid 1px #8E427A;
 }
 .form-add form .btn-g {
   height: auto;
@@ -254,25 +254,25 @@ footer .tecnologias .container-tec .interno p:hover {
 }
 .form-add form .btn-g .btn-submit {
   outline: none;
-  border: solid 1px #24CDDC;
-  color: #24CDDC;
+  border: solid 1px #CFE90E;
+  color: #CFE90E;
 }
 .form-add form .btn-g .btn-submit:hover {
-  background: #24CDDC;
-  color: white;
-  border: #08ffff 2px solid;
-  box-shadow: 2px 2px 5px #08ffff, 2px 2px 5px black;
+  background: #CFE90E;
+  color: black;
+  border: #8E427A 2px solid;
+  box-shadow: 2px 2px 5px #8E427A, 2px 2px 5px black;
 }
 .form-add form .btn-g .btn-reset {
   outline: none;
-  border: solid 1px #EFB607;
-  color: #EFB607;
+  border: solid 1px #FF0344;
+  color: #FF0344;
 }
 .form-add form .btn-g .btn-reset:hover {
-  background: #EFB607;
-  color: white;
-  border: #EFDD07 2px solid;
-  box-shadow: 2px 2px 5px #EFDD07, 2px 2px 5px black;
+  background: #FF0344;
+  color: black;
+  border: #FFBE03 2px solid;
+  box-shadow: 2px 2px 5px #FFBE03, 2px 2px 5px black;
 }
 
 .nav {
@@ -288,7 +288,7 @@ footer .tecnologias .container-tec .interno p:hover {
 .nav .buttons button {
   display: inline-block;
   height: 100%;
-  background: #191919;
+  background: white;
   border: black solid 1px;
 }
 .nav .buscador {
@@ -302,45 +302,45 @@ footer .tecnologias .container-tec .interno p:hover {
 .nav .buscador input {
   text-align: center;
   display: inline-block;
-  background: #191919;
+  background: white;
   width: 90%;
   outline: none;
-  color: #EFDD07;
+  color: #FFBE03;
   border-radius: 12px;
-  border: #24CDDC solid 1px;
+  border: #CFE90E solid 1px;
 }
 .nav .buscador input::placeholder {
   text-align: center;
-  color: #EFDD07;
+  color: #FFBE03;
 }
 .nav .buscador input:hover {
-  border: #EFDD07 solid 1px;
+  border: #FFBE03 solid 1px;
 }
 .nav .buscador input:hover::placeholder {
   color: transparent;
 }
 .nav .buscador i {
-  color: #24CDDC;
+  color: #CFE90E;
   background-color: transparent;
 }
 .nav .buscador i:hover {
-  color: #EFDD07;
+  color: #FFBE03;
 }
 .nav .buscador button {
   border-radius: 100%;
   width: 30px;
   display: inline-block;
-  background: #404040;
-  border: #404040 2px solid;
+  background: #222222;
+  border: #222222 2px solid;
 }
 .nav .buscador button:hover {
   border-radius: 100%;
   width: 40px;
   height: 40px;
   display: inline-block;
-  background: #191919;
-  border: #EFDD07 2px solid;
-  color: #EFDD07;
+  background: white;
+  border: #FFBE03 2px solid;
+  color: #FFBE03;
 }
 
 @media screen and (max-width: 990px) {
@@ -419,13 +419,13 @@ li {
   max-width: 300px;
   width: 100%;
   height: auto;
-  background: #222222;
+  background: #0E88E4;
   display: block;
   box-shadow: 5px 5px 6px black;
 }
 .lista-grid .item-card .item-card-titulo {
   overflow: hidden;
-  background-color: #191919;
+  background-color: white;
   grid-template-columns: 5fr 1fr;
   display: grid;
   height: 50px;
@@ -439,7 +439,7 @@ li {
   margin: 0;
   text-align: center;
   display: block;
-  color: #24CDDC;
+  color: #CFE90E;
   font-size: x-large;
   width: 100%;
   height: 100%;
@@ -452,12 +452,12 @@ li {
   display: inline-block;
   font-size: 20px;
   padding-top: 8px;
-  background: #222222;
+  background: #0E88E4;
   word-wrap: break-word;
 }
 .lista-grid .item-card .item-card-id {
   overflow: hidden;
-  background-color: #111111;
+  background-color: #4E63A8;
   display: block;
   height: 25px;
   width: 100%;
@@ -470,13 +470,13 @@ li {
   margin: 0;
   text-align: center;
   display: block;
-  color: #24CDDC;
+  color: #CFE90E;
   font-size: small;
   width: 100%;
   height: 100%;
 }
 .lista-grid .item-card .item-card-content {
-  background: #323232;
+  background: white;
   display: block;
   height: 150px;
   width: 100%;
@@ -484,7 +484,7 @@ li {
   text-align: center;
   word-break: break-word;
   margin: 0;
-  color: #EFB607;
+  color: #FF0344;
   overflow: auto;
 }
 .lista-grid .item-card .item-card-foot {
@@ -538,25 +538,25 @@ li {
   display: block;
   width: 100%;
   height: 95%;
-  background: #EFB607;
+  background: #FF0344;
   border: none;
 }
 .lista-grid .item-card .form-mod input {
-  background: #111111;
+  background: #4E63A8;
   display: block;
   width: 100%;
   border: none;
-  border-bottom: #24CDDC 1px solid;
+  border-bottom: #CFE90E 1px solid;
   margin: 3px;
   text-align: center;
-  color: #EFDD07;
+  color: #FFBE03;
 }
 .lista-grid .item-card .form-mod input::placeholder {
   text-align: center;
-  color: white;
+  color: black;
 }
 .lista-grid .item-card .form-mod input:hover::placeholder {
-  color: #24CDDC;
+  color: #CFE90E;
 }
 .lista-grid .item-card .form-mod button {
   display: block;
@@ -566,7 +566,7 @@ li {
   color: greenyellow;
 }
 .lista-grid .item-card:hover {
-  box-shadow: 5px 5px 6px #24CDDC;
+  box-shadow: 5px 5px 6px #CFE90E;
 }
 
 @media screen and (max-width: 1200px) {
@@ -644,7 +644,7 @@ li {
     grid-area: header;
     background-repeat: no-repeat;
     background-size: cover;
-    background: #24CDDC;
+    background: #CFE90E;
     box-shadow: 3px 3px 5px black;
   }
   .cuerpo-grid header .titulo {
@@ -667,19 +667,19 @@ li {
     padding-top: 15px;
   }
   .cuerpo-grid nav {
-    background: #191919;
+    background: white;
     height: auto;
     grid-area: navigation;
   }
   .cuerpo-grid aside {
     grid-area: menu;
-    background: #323232;
+    background: white;
     height: 100%;
     width: 100%;
   }
   .cuerpo-grid main {
     grid-area: main;
-    background: #191919;
+    background: white;
     height: 100%;
   }
 }
@@ -701,7 +701,7 @@ li {
     grid-area: header;
     background-repeat: no-repeat;
     background-size: cover;
-    background: #24CDDC;
+    background: #CFE90E;
     box-shadow: 3px 3px 5px black;
   }
   .cuerpo-grid header .titulo {
@@ -724,19 +724,19 @@ li {
     padding-top: 15px;
   }
   .cuerpo-grid nav {
-    background: #191919;
+    background: white;
     height: auto;
     grid-area: navigation;
   }
   .cuerpo-grid aside {
     grid-area: menu;
-    background: #323232;
+    background: white;
     height: 100%;
     width: 100%;
   }
   .cuerpo-grid main {
     grid-area: main;
-    background: #191919;
+    background: white;
     height: 100%;
   }
 }
@@ -756,7 +756,7 @@ li {
     height: 100%;
     width: 100%;
     grid-area: pie;
-    background: linear-gradient(90grad, #323232, #222222, #191919, black);
+    background: linear-gradient(90grad, white, #0E88E4, white, black);
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
@@ -817,14 +817,14 @@ li {
     font-size: smaller;
   }
   .cuerpo-grid footer footer .tecnologias .container-tec .interno .logos i:hover {
-    color: #EFDD07;
+    color: #FFBE03;
   }
   .cuerpo-grid footer footer .tecnologias .container-tec .interno p {
     font-size: 5px;
     padding: 20px;
   }
   .cuerpo-grid footer footer .tecnologias .container-tec .interno p:hover {
-    color: #EFDD07;
+    color: #FFBE03;
     padding: 5px;
     font-size: 8px;
   }
@@ -845,7 +845,7 @@ li {
     height: 100%;
     width: 100%;
     grid-area: pie;
-    background: linear-gradient(90grad, #323232, #222222, #191919, black);
+    background: linear-gradient(90grad, white, #0E88E4, white, black);
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
@@ -906,17 +906,17 @@ li {
     font-size: smaller;
   }
   footer footer .tecnologias .container-tec .interno .logos i:hover {
-    color: #EFDD07;
+    color: #FFBE03;
   }
   footer footer .tecnologias .container-tec .interno p {
     font-size: 5px;
     padding: 20px;
   }
   footer footer .tecnologias .container-tec .interno p:hover {
-    color: #EFDD07;
+    color: #FFBE03;
     padding: 5px;
     font-size: 8px;
   }
 }
 
-/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=stylesLight.css.map */

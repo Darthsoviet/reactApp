@@ -1,14 +1,14 @@
 import React from 'react';
 
 
-import "../css/styles.css";
+import "../css/stylesLight.css";
 import Navigation from "./Navigation";
 import AddForm from "./AddForm";
 import Lista from "./Lista";
 import Footer from "./Footer";
 
 
-class App extends React.Component {
+class AppL extends React.Component {
     constructor() {
         super()
         this.state = {
@@ -43,9 +43,9 @@ class App extends React.Component {
     }
 
     quitarElemento(index) {
-        fetch("http://localhost:8080/AppTiendas/api/item?idItem=" + this.state.items[index].idItem, {method: "delete"})
+        fetch("http://localhost:8080/AppTiendas/api/item?id=" + this.state.items[index].idItem, {method: "delete"})
             .then((res) => {
-                console.log(res.json());
+                console.log(res.status);
             })
             .then(this.update.bind(this));
 
@@ -60,6 +60,7 @@ class App extends React.Component {
             <div className="cuerpo-grid">
                 <header className="titulo">
                     <h1 id="inicio" className="display2 titulo">Inventario <i className="fas fa-address-book"></i></h1>
+                   <button onClick={this.props.modo}>modo</button>
                 </header>
                 <Navigation nombre="Primer Pagina React" items={this.drawLista}/>
                 <aside>
@@ -83,5 +84,5 @@ class App extends React.Component {
 
 }
 
-export default App;
+export default AppL;
 

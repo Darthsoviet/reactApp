@@ -1,6 +1,7 @@
 
-@mixin footer($gris,$gris-claro,$gris-oscuro,$dark,$warnin-hover){
+@mixin footer($gris,$gris-claro,$gris-oscuro,$dark,$warnin-hover,$letra){
   footer {
+    
     height: 100%;
     width: 100%;
     grid-area: pie;
@@ -80,7 +81,7 @@
 
           }
           p{
-            font-size: 15px;
+            font-size: 8px;
             padding: 20px;
           }
           p:hover{

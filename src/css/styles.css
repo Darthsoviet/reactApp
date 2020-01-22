@@ -135,7 +135,7 @@ footer .tecnologias .container-tec .interno .logos i:hover {
   color: #EFDD07; }
 
 footer .tecnologias .container-tec .interno p {
-  font-size: 15px;
+  font-size: 8px;
   padding: 20px; }
 
 footer .tecnologias .container-tec .interno p:hover {
@@ -154,11 +154,13 @@ footer .tecnologias .container-tec .interno p:hover {
   background: #222222; }
 
 .form-add-off .btn-toggle-off {
+  height: 40px;
   display: block;
   background: #323232;
   width: 100%;
   border: solid #323232;
-  border-radius: 3px; }
+  border-radius: 3px;
+  border-bottom: 2px solid #EFDD07; }
 
 .form-add {
   width: 250px;
@@ -169,10 +171,12 @@ footer .tecnologias .container-tec .interno p:hover {
   background: #222222; }
 
 .form-add .btn-toggle-on {
+  height: 40px;
   display: block;
   background: #323232;
   width: 100%;
   border: solid #323232;
+  border-bottom: 2px solid #EFDD07;
   border-radius: 3px; }
 
 .form-add .form-head {
@@ -220,6 +224,14 @@ footer .tecnologias .container-tec .interno p:hover {
 
 .form-add form input:hover::placeholder {
   color: #24CDDC; }
+
+.form-add form input:invalid {
+  color: #EFDD07;
+  border-bottom: solid 1px #EFDD07; }
+
+.form-add form input:valid {
+  color: #08ffff;
+  border-bottom: solid 1px #08ffff; }
 
 .form-add form .btn-g {
   height: auto;
@@ -281,20 +293,47 @@ footer .tecnologias .container-tec .interno p:hover {
   align-items: center; }
 
 .nav .buscador input {
+  text-align: center;
   display: inline-block;
+  background: #191919;
   width: 90%;
   outline: none;
-  color: black; }
+  color: #EFDD07;
+  border-radius: 12px;
+  border: #24CDDC solid 1px; }
+
+.nav .buscador input::placeholder {
+  text-align: center;
+  color: #EFDD07; }
+
+.nav .buscador input:hover {
+  border: #EFDD07 solid 1px; }
+
+.nav .buscador input:hover::placeholder {
+  color: transparent; }
 
 .nav .buscador i {
   color: #24CDDC;
-  background-color: #404040; }
+  background-color: transparent; }
+
+.nav .buscador i:hover {
+  color: #EFDD07; }
 
 .nav .buscador button {
+  border-radius: 100%;
   width: 30px;
   display: inline-block;
   background: #404040;
   border: #404040 2px solid; }
+
+.nav .buscador button:hover {
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  background: #191919;
+  border: #EFDD07 2px solid;
+  color: #EFDD07; }
 
 @media screen and (max-width: 990px) {
   .nav {
@@ -351,13 +390,15 @@ li {
 .lista-grid {
   height: 100%;
   width: 100%;
+  max-width: 100%;
   padding: 15px 15px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 15px 15px; }
 
 .lista-grid .item-card {
-  min-width: 235px;
+  min-width: 200px;
+  max-width: 300px;
   width: 100%;
   height: auto;
   background: #222222;
@@ -365,6 +406,7 @@ li {
   box-shadow: 5px 5px 6px black; }
 
 .lista-grid .item-card .item-card-titulo {
+  overflow: hidden;
   background-color: #191919;
   grid-template-columns: 5fr 1fr;
   display: grid;
@@ -382,18 +424,38 @@ li {
   color: #24CDDC;
   font-size: x-large;
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  word-break: break-all; }
 
 .lista-grid .item-card .item-card-titulo .item-card-contador {
   text-align: center;
   width: 100%;
   height: 100%;
   display: inline-block;
-  color: #24CDDC;
   font-size: 20px;
   padding-top: 8px;
   background: #222222;
   word-wrap: break-word; }
+
+.lista-grid .item-card .item-card-id {
+  overflow: hidden;
+  background-color: #111111;
+  display: block;
+  height: 25px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center; }
+
+.lista-grid .item-card .item-card-id h1 {
+  padding: 5px;
+  margin: 0;
+  text-align: center;
+  display: block;
+  color: #24CDDC;
+  font-size: small;
+  width: 100%;
+  height: 100%; }
 
 .lista-grid .item-card .item-card-content {
   background: #323232;
@@ -462,15 +524,18 @@ li {
   border: none; }
 
 .lista-grid .item-card .form-mod input {
-  background: transparent;
+  background: #111111;
   display: block;
   width: 100%;
   border: none;
   border-bottom: #24CDDC 1px solid;
-  margin: 3px; }
+  margin: 3px;
+  text-align: center;
+  color: #EFDD07; }
 
 .lista-grid .item-card .form-mod input::placeholder {
-  text-align: center; }
+  text-align: center;
+  color: white; }
 
 .lista-grid .item-card .form-mod input:hover::placeholder {
   color: #24CDDC; }
@@ -478,7 +543,7 @@ li {
 .lista-grid .item-card .form-mod button {
   display: block;
   width: 100%;
-  background: transparent;
+  background: black;
   border: 2px #adff2f solid;
   color: greenyellow; }
 
@@ -489,37 +554,44 @@ li {
   .lista-grid {
     padding: 15px 15px;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 15px 15px; } }
+    grid-gap: 15px 15px; }
+  .lista-grid .item-card {
+    max-width: 300px; } }
 
 @media screen and (max-width: 990px) {
   .lista-grid {
     padding: 15px 15px;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 15px 15px; } }
 
 @media screen and (max-width: 768px) {
   .lista-grid {
     padding: 15px 15px;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 15px 15px; }
   .lista-grid .item-card {
-    max-width: 300px; } }
+    overflow: hidden;
+    max-width: content-box;
+    min-width: 200px; } }
 
-@media screen and (max-width: 580px) {
+@media screen and (max-width: 768px) and (max-width: 580px) {
   .lista-grid {
     padding: 15px 15px;
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 15px 15px; }
   .lista-grid .item-card {
-    max-width: auto; } }
+    max-width: auto;
+    min-width: 200px; } }
 
-@media screen and (max-width: 411px) {
+@media screen and (max-width: 768px) and (max-width: 411px) {
   .lista-grid {
     padding: 15px 15px;
     grid-template-columns: repeat(1, 1fr);
-    grid-gap: 15px 15px; } }
+    grid-gap: 15px 15px; }
+  .lista-grid .item-card {
+    min-width: 200px; } }
 
-@media only screen and (width: 1024px) and (height: 1366px) {
+@media only screen and (max-width: 768px) and (width: 1024px) and (height: 1366px) {
   .lista-grid {
     padding: 15px 15px;
     display: grid;
@@ -533,7 +605,56 @@ li {
     height: 100%;
     min-height: 100vh;
     margin: 0 auto;
-    grid-template-columns: auto auto;
+    grid-template-columns: min-content auto;
+    grid-template-rows: 50px 100px auto 300px;
+    grid-template-areas: "header header" "navigation navigation" "menu main" "pie pie";
+    border: solid 1px black; }
+  .cuerpo-grid header {
+    height: auto;
+    grid-area: header;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background: #24CDDC;
+    box-shadow: 3px 3px 5px black; }
+  .cuerpo-grid header .titulo {
+    color: black;
+    height: 100%;
+    width: 100%;
+    display: flex; }
+  .cuerpo-grid header .titulo h1 {
+    margin: 0;
+    width: auto;
+    display: inline-block;
+    padding: 5px; }
+  .cuerpo-grid header .titulo i {
+    margin: 0;
+    font-size: xx-large;
+    color: black;
+    display: inline-block;
+    padding-top: 15px; }
+  .cuerpo-grid nav {
+    background: #191919;
+    height: auto;
+    grid-area: navigation; }
+  .cuerpo-grid aside {
+    grid-area: menu;
+    background: #323232;
+    height: 100%;
+    width: 100%; }
+  .cuerpo-grid main {
+    grid-area: main;
+    background: #191919;
+    height: 100%; } }
+
+@media only screen and (width: 1366px) and (height: 1024px) {
+  .cuerpo-grid {
+    width: 100%;
+    display: grid;
+    height: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    margin: 0 auto;
+    grid-template-columns: min-content auto;
     grid-template-rows: 50px 100px auto 300px;
     grid-template-areas: "header header" "navigation navigation" "menu main" "pie pie";
     border: solid 1px black; }
@@ -581,6 +702,7 @@ li {
     height: 100%;
     min-height: 100vh;
     margin: 0 auto;
+    grid-template-columns: min-content auto;
     grid-template-rows: auto auto auto 300px;
     grid-template-areas: "header header" "navigation navigation" "menu main" "pie pie";
     border: solid 1px black; }

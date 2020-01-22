@@ -3,21 +3,21 @@
 @import "list.scss";
 @import "footer.scss";
 
-$gris-oscuro: #222222;
-$gris: #323232;
-$gris-claro: #404040;
-$dark: #191919;
-$very-dark:#111111;
-$accept: #24CDDC;
-$accept-hover: rgb(8, 255, 255);
-$warnin: #EFB607;
-$warnin-hover: #EFDD07;
-$letra:white;
+$gris-oscuro: #0E88E4 ;
+$gris: white;
+$gris-claro: #222222;
+$dark: white;
+$very-dark:#4E63A8;
+$accept: #CFE90E ;
+$accept-hover: #8E427A;
+$warnin: #FF0344;
+$warnin-hover: #FFBE03;
+$letra:black;
 * {
   margin: 0;
   padding: 0;
 
-  color: white;
+  color: $letra;
 }
 
 #root {

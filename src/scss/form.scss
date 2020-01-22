@@ -1,4 +1,4 @@
-@mixin form-add($color1,$color2,$aceptar,$aceptar-hover,$warnin,$warnin-hover) {
+@mixin form-add($color1,$color2,$aceptar,$aceptar-hover,$warnin,$warnin-hover,$letra) {
 
 
   .form-add-off {
@@ -14,11 +14,14 @@
     background: $color2;
 
     .btn-toggle-off {
+      height: 40px;
       display: block;
       background: $color1;
       width: 100%;
       border: solid $color1;
       border-radius: 3px;
+      border-bottom: 2px solid $warnin-hover;
+
 
     }
 
@@ -37,10 +40,13 @@
     background: $color2;
 
     .btn-toggle-on {
+
+      height: 40px;
       display: block;
       background: $color1;
       width: 100%;
       border: solid $color1;
+      border-bottom: 2px solid $warnin-hover;
       border-radius: 3px;
 
     }
@@ -49,7 +55,7 @@
 
       width: 100%;
       height: auto;
-      color: white;
+      color: $letra;
       display: block;
       text-align: center;
       align-items: center;
@@ -61,7 +67,7 @@
     }
 
     form {
-      color: white;
+      color: $letra;
       display: block;
       align-items: center;
       padding: 10%;
@@ -90,7 +96,7 @@
         border: none;
         display: block;
         width: 100%;
-        border-bottom: 1px solid white;
+        border-bottom: 1px solid $letra;
         margin-bottom: 1px;
       }
 
@@ -101,8 +107,13 @@
       input:hover::placeholder {
         color: $aceptar;
       }
-
-
+      input:invalid{
+        color: $warnin-hover;border-bottom:solid 1px $warnin-hover;
+      }
+      input:valid{
+        color: $aceptar-hover;
+        border-bottom:solid 1px $aceptar-hover;
+      }
       .btn-g {
         height: auto;
         padding-top: 20px;
@@ -126,7 +137,7 @@
 
         .btn-submit:hover {
           background: $aceptar;
-          color: white;
+          color: $letra;
           border: $aceptar-hover 2px solid;
           box-shadow: 2px 2px 5px $aceptar-hover, 2px 2px 5px black;;
         }
@@ -139,7 +150,7 @@
 
         .btn-reset:hover {
           background: $warnin;
-          color: white;
+          color: $letra;
           border: $warnin-hover 2px solid;
           box-shadow: 2px 2px 5px $warnin-hover,
           2px 2px 5px black;

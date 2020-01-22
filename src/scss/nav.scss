@@ -1,4 +1,4 @@
-@mixin nav($color1,$color2,$dark,$accept) {
+@mixin nav($color1,$color2,$dark,$accept,$letra) {
 
 
     .nav{
@@ -29,22 +29,49 @@
             display: flex;
             align-items: center;
             input{
-                display: inline-block;
-                width: 90%;
-                outline: none;
-                color: black;
+                text-align: center;
+                 display: inline-block;
+                 background: $dark;
+                 width: 90%;
+                 outline: none;
+                 color: $warnin-hover;
+                 border-radius: 12px;
+                border: $accept solid 1px;
+
+             }
+            input::placeholder{
+                text-align: center;
+                color: $warnin-hover;
+            }
+            input:hover{
+                border: $warnin-hover solid 1px;
+            }
+            input:hover::placeholder{
+                color: transparent;
             }
             i{
                 color: $accept;
-                background-color: $color1;
+                background-color: transparent;
+            }
+            i:hover{
+                color: $warnin-hover;
+
             }
             button{
+                border-radius: 100%;
                 width: 30px;
                 display: inline-block;
                 background: $color1;
                 border: $color1 2px solid;
-
-
+            }
+            button:hover{
+                border-radius: 100%;
+                width: 40px;
+                height: 40px;
+                display: inline-block;
+                background: $dark;
+                border: $warnin-hover 2px solid;
+                color: $warnin-hover;
             }
         }
 
