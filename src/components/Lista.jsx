@@ -16,7 +16,7 @@ export class Lista extends Component {
                 const i = new Item(elemento.nombre, elemento.precio, elemento.descripcion, elemento.cantidad, elemento.idItem);
                 const index = this.props.items.indexOf(elemento);
                 return (
-                    <ItemCard key={index} eliminar={this.props.eliminar} index={index} item={i}
+                    <ItemCard key={index} eliminar={this.props.eliminar}  item={i}
                               update={this.props.update}/>
                 );
             });

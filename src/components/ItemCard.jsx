@@ -17,24 +17,27 @@ export class ItemCard extends Component {
 
         // eslint-disable-next-line default-case
 
-        if (cantidad < 5) {
+        if (cantidad <= 5) {
             return {color: "#EE2408"};
-        } else if (cantidad >= 5 && cantidad < 10) {
+        } else if (cantidad > 5 && cantidad <= 10) {
             return {color: "#EE9708"};
-        } else if (cantidad >= 10 && cantidad < 25) {
+        } else if (cantidad > 10 && cantidad < 25) {
             return {color: "#D2EE08"};
         } else if (cantidad >= 25 && cantidad < 50) {
             return {color: "#5FEE08"};
-        } else if (cantidad >= 50) {
+        } else if (cantidad >= 50 && cantidad <= 100) {
             return {color: "#08EE24"};
+        }else if (cantidad >= 100) {
+            return {color:  "rgb(8, 255, 255)"};
         }
+
         return null;
 
     }
 
     handleOnClick(e) {
 
-        this.props.eliminar(this.props.index);
+        this.props.eliminar(this.props.item.idItem);
 
     }
 

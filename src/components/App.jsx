@@ -66,8 +66,8 @@ class App extends React.Component {
     }
 
     /* Hace un ajax de tipo delete al servidor de glassfish */
-    quitarElemento(index) {
-        fetch("http://localhost:8080/AppTiendas/api/item?idItem=" + this.state.items[index].idItem, {method: "delete"})
+    quitarElemento(id) {
+        fetch("http://localhost:8080/AppTiendas/api/item?idItem=" +id, {method: "delete"})
             .then((res) => {
                 console.log(res.json());
             })
