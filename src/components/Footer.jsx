@@ -1,4 +1,10 @@
 import React, {Component} from "react";
+import java from "../icons/java-58-1174951.svg";
+import mysql from "../icons/mysql-21-1174941.svg";
+import js from "../icons/javascript-24-1174950.svg";
+import git from "../icons/git-16-1175195.svg";
+import css from "../icons/css3-8-1175200.svg";
+import html from "../icons/html5-42-1175210.svg";
 
 class Footer  extends Component {
 
@@ -18,8 +24,10 @@ class Footer  extends Component {
                             <h4>Back</h4>
                             <section className={"interno"}>
                                 <div className={"logos"}>
-                                    <i className="fab fa-java"></i>
-                                    <i className="fas fa-database"></i>
+
+                                    <i><img src={mysql} height={50} width={50} alt={"java"}/></i>
+                                    <i><img src={java} height={50} width={50} alt={"mysql"}/></i>
+                                    <i><img src={git} alt="git" height={50} width={50}/></i>
                                 </div>
                                 <article>
                                     <p>Se utilizo JEE 8 con el API REST jersey en un servidor glassfish con base de datos en MYSQL utilizando JDBC
@@ -32,9 +40,9 @@ class Footer  extends Component {
                             <h4>Front</h4>
                             <section className={"interno"}>
                                 <div className={"logos"}>
-                                    <i className="fab fa-js"></i>
-                                    <i className="fab fa-html5"></i>
-                                    <i className="fab fa-css3-alt"></i>
+                                    <i><img src={js} alt="js" width={30} height={30}/></i>
+                                    <i><img src={html} alt="html" width={30} height={30}/></i>
+                                    <i><img src={css} alt="css" width={30} height={30}/></i>
                                     <i className="fab fa-react"></i>
                                     <i className="fab fa-sass"></i>
                                     <i className="fab fa-bootstrap"></i>

@@ -45,9 +45,9 @@
       display: block;
       background: $color1;
       width: 100%;
-      border: solid $color1;
-      border-bottom: 2px solid $warnin-hover;
-      border-radius: 3px;
+      border: inset 1px $color1;
+      border-bottom: 2px outset $color2;
+      
 
     }
 
@@ -102,6 +102,16 @@
 
       input:hover {
         border-bottom: 1px solid $aceptar;
+      }
+      .progreso-des{
+        display: none;
+        color:$warnin-hover;
+        background: $color1;
+        -webkit-appearance: none;
+
+      }
+      input:focus +.progreso-des{
+        display: block;
       }
 
       input:hover::placeholder {

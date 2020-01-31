@@ -2,6 +2,7 @@
 @import "nav.scss";
 @import "list.scss";
 @import "footer.scss";
+@import "formularioLog";
 
 $gris-oscuro: #222222;
 $gris: #323232;
@@ -43,7 +44,7 @@ $letra:white;
   min-height: 100vh;
   margin: 0 auto;
   grid-template-columns: min-content auto;
-  grid-template-rows: auto auto minmax(80vh,auto) auto;
+  grid-template-rows: auto auto minmax(80vh,100vh) auto;
   grid-template-areas: "header header" "navigation navigation" "menu main" "pie pie";
   border: solid 1px black;
 
@@ -55,12 +56,22 @@ $letra:white;
     background-size: cover;
     background: $accept;
     box-shadow: 3px 3px 5px black;
+    .btn-log{
 
+        background-color: $warnin;
+        display: inline-block;
+        border-radius: 2px;
+        color: white;
+        padding: 2px;
+        -webkit-appearance: none;
+        border: solid 1px $warnin;
+
+    }
     .titulo {
       color: black;
       height: 100%;
       width: 100%;
-      display: flex;
+      display: inline-block;
 
       h1 {
         margin: 0;
@@ -109,11 +120,6 @@ $letra:white;
 
 }
 
-@include footer($gris, $gris-claro, $gris-oscuro, $dark, $warnin-hover,$letra);
-@include form-add($gris, $gris-oscuro, $accept, $accept-hover, $warnin, $warnin-hover,$letra);
-@include nav($gris-claro, $gris-oscuro, $dark, $accept,$letra);
-@include list($gris, $gris-oscuro, $dark, $accept, $warnin,$very-dark,$letra);
-//ipad pro
 @media only screen and (width: 1024px) and (height: 1366px) {
   .cuerpo-grid {
 
@@ -123,7 +129,7 @@ $letra:white;
     min-height: 100vh;
     margin: 0 auto;
     grid-template-columns: min-content auto;
-    grid-template-rows: 50px 100px minmax(80vh,auto) 300px;
+    grid-template-rows: 50px 100px minmax(80vh,100vh) 300px;
     grid-template-areas: "header header" "navigation navigation" "menu main" "pie pie";
     border: solid 1px black;
 
@@ -185,7 +191,6 @@ $letra:white;
   }
 
 }
-
 @media only screen and (width: 1366px) and (height: 1024px) {
   .cuerpo-grid {
 
@@ -197,7 +202,7 @@ $letra:white;
     margin: 0 auto;
     grid-template-columns: min-content auto;
 
-    grid-template-rows: 50px 100px minmax(80vh,auto) 300px;
+    grid-template-rows: 50px 100px minmax(80vh,100vh) 300px;
     grid-template-areas: "header header" "navigation navigation" "menu main" "pie pie";
     border: solid 1px black;
 
@@ -258,8 +263,6 @@ $letra:white;
   }
 
 }
-
-
 @media screen and(max-width: 768px) {
   .cuerpo-grid {
     width: 100%;
@@ -268,7 +271,7 @@ $letra:white;
     min-height: 100vh;
     margin: 0 auto;
     grid-template-columns: min-content auto;
-    grid-template-rows: auto auto minmax(80vh,auto) 300px;
+    grid-template-rows: auto auto minmax(80vh,100vh) 300px;
     grid-template-areas: "header header" "navigation navigation" "menu main" "pie pie";
     border: solid 1px black;
 
@@ -386,7 +389,8 @@ $letra:white;
     min-height: 100vh;
     margin: 0 auto;
 
-    grid-template-rows: auto auto minmax(80vh,auto) 300px;
+
+    grid-template-rows: auto auto minmax(80vh,100vh) 300px;
     grid-template-areas: "header header" "navigation navigation" "menu main" "pie pie";
     border: solid 1px black;
 
@@ -495,4 +499,13 @@ $letra:white;
 
 
   }
+
 }
+
+
+@include footer($gris, $gris-claro, $gris-oscuro, $dark, $warnin-hover,$letra);
+@include form-add($gris, $gris-oscuro, $accept, $accept-hover, $warnin, $warnin-hover,$letra);
+@include nav($gris-claro, $gris-oscuro, $dark, $accept,$letra);
+@include list($gris, $gris-oscuro, $dark, $accept, $warnin,$very-dark,$letra);
+@include formularioLog($very-dark,$dark,$gris-oscuro,$accept,$warnin);
+//ipad pro

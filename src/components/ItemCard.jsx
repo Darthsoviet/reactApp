@@ -90,14 +90,15 @@ export class ItemCard extends Component {
                                  cantidad={this.props.item.cantidad}
                                  precio={this.props.item.precio}
                                  descripcion={this.props.item.descripcion}
-                                 idItem={this.props.item.idItem}/>
+                                 idItem={this.props.item.idItem} />
 
                     </article>
                 </li>
 
             );
         } else {
-            return (<li>
+            return (
+                <li>
                 <article className="item-card">
                     <div className="item-card-titulo">
                         <h1>
@@ -134,6 +135,7 @@ export class ItemCard extends Component {
                         </div>
 
                     </div>
+
 
 
                 </article>

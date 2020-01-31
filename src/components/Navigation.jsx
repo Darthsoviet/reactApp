@@ -16,7 +16,7 @@ class Navigation extends Component {
     handleOnChange(event) {
         const {value} = event.target;
         this.setState({cadena :value});
-        console.log(this.state.cadena);
+
 
 
     }
@@ -27,6 +27,10 @@ class Navigation extends Component {
             fetch("http://localhost:8080/AppTiendas/api/item/search/" + this.state.cadena, {
                 method: "get"
             }).then((res) => {
+                console.log(res.status);
+                if(res.status===204){
+                    return [];
+                }
                 return res.json();
             })
                 .then((json) => {
@@ -37,6 +41,7 @@ class Navigation extends Component {
             fetch("http://localhost:8080/AppTiendas/api/item", {
                 method: "get"
             }).then((res) => {
+                console.log(res.status);
                 return res.json();
             })
                 .then((json) => {

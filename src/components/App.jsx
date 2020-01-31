@@ -6,6 +6,8 @@ import Navigation from "./Navigation";
 import AddForm from "./AddForm";
 import Lista from "./Lista";
 import Footer from "./Footer";
+import FormularioLogModal from "./FormularioLogModal";
+import Header from "./Header";
 
 
 class App extends React.Component {
@@ -13,14 +15,29 @@ class App extends React.Component {
         super()
         this.state = {
             items: [],
-            oscuro:true
+            oscuro: true,
+            logShow: false,
+            usuario: null
 
 
         }
-        this.drawLista=this.drawLista.bind(this);
+        this.drawLista = this.drawLista.bind(this);
+        this.desplegarFormularioLog = this.desplegarFormularioLog.bind(this);
+        this.update = this.update.bind(this);
+        this.quitarElemento = this.quitarElemento.bind(this);
+        this.agregarUsuarioSesion = this.agregarUsuarioSesion.bind(this);
 
     }
-    i
+
+    /* este metodo se encarga de cada que se llama hacer un GET ajax para obtener la liste
+    * de productos de la base de datos si hay un error la lista se convierte en un tipo null y si no se manda a llamar el metodo
+    * draw para pasar la lista al estado de la app*/
+
+
+    agregarUsuarioSesion(usuario) {
+
+        this.setState({usuario: usuario});
+    }
 
     update() {
         fetch("http://localhost:8080/AppTiendas/api/item",
@@ -29,59 +46,75 @@ class App extends React.Component {
                 console.log(res.status);
                 return res.json()
             })
+            .catch((err) => {
+                this.setState({items: null})
+            })
             .then(json => {
                 this.drawLista(json);
             });
     }
-    drawLista(json){
+
+    /* recibe un parametro que es una lista json y la mete al estado*/
+    drawLista(json) {
         this.setState({items: json})
     }
 
+    /* se encarga de que al momento de que la pagina cargue y renderise el componente cargue la lista de items*/
     componentDidMount() {
         this.update();
 
     }
 
+    /* Hace un ajax de tipo delete al servidor de glassfish */
     quitarElemento(index) {
         fetch("http://localhost:8080/AppTiendas/api/item?idItem=" + this.state.items[index].idItem, {method: "delete"})
             .then((res) => {
                 console.log(res.json());
             })
-            .then(this.update.bind(this));
-
-
+            .then(this.update);
     }
 
+    //Se encarga de cambiar el estado de si el formularo modal se va a mostrar o no
+    desplegarFormularioLog(event) {
+        if (!this.state.logShow) {
+            const form = document.getElementsByName("modal")[0];
+            form.style.display = "block";
+            this.setState({logShow: true});
+        } else {
+            const form = document.getElementsByName("modal")[0];
+            form.style.display = "none";
+            this.setState({logShow: false});
+        }
+    }
 
     render() {
 
 
         return (
-            <div className="cuerpo-grid">
-                <header className="titulo">
-                    <h1 id="inicio" className="display2 titulo">Inventario <i className="fas fa-address-book"></i></h1>
-                </header>
-                <Navigation nombre="Primer Pagina React" items={this.drawLista}/>
-                <aside>
+            <div>
 
-                    <AddForm title="Inserte Item" update={this.update.bind(this)}/>
+                <FormularioLogModal desplegarFormularioLog={this.desplegarFormularioLog}
+                                    agregarUsuarioSesion={this.agregarUsuarioSesion}/>
+                <div className="cuerpo-grid">
 
-                    <a id="volverInicio" href="#inicio"><i  className="fas fa-angle-double-up fixed-bottom"></i></a>
-                </aside>
+                    <Header desplegarFormularioLog={this.desplegarFormularioLog} usuario={this.state.usuario}/>
+                    <Navigation nombre="Primer Pagina React" items={this.drawLista}/>
+                    <aside>
+                        <AddForm title="Inserte Item" update={this.update}/>
 
-                <main>
-                    <Lista items={this.state.items} eliminar={this.quitarElemento.bind(this)}
-                           update={this.update.bind(this)}/>
-
-                </main>
-                <Footer/>
-
+                    </aside>
+                    <main>
+                        <Lista items={this.state.items} eliminar={this.quitarElemento}
+                               update={this.update}/>
+                    </main>
+                    <Footer/>
+                </div>
             </div>
-
         );
     }
 
 }
+
 
 export default App;
 

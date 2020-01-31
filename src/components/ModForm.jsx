@@ -53,17 +53,18 @@ class ModForm extends React.Component {
 
     render() {
         return (
-            <form className={"form-mod was-validated"} onSubmit={this.handleOnSubmit}>
+            <form id="mod" className={"form-mod was-validated"} onSubmit={this.handleOnSubmit}>
                 <input type="text" required placeholder="Nombre" name="nombre" onChange={this.handleOnChange}
                        value={this.state.nombre}/>
                 <input type="text" required placeholder="Descripcion" name="descripcion" onChange={this.handleOnChange}
                        value={this.state.descripcion}/>
-                <input type="number" required placeholder="Precio" name="precio" step="0.01"
+                <input min={0} type="number" required placeholder="Precio" name="precio" step="0.01"
                        onChange={this.handleOnChange} value={this.state.precio}/>
-                <input type="number" required placeholder="cantidad" name="cantidad" onChange={this.handleOnChange}
+                <input min={0} type="number" required placeholder="cantidad" name="cantidad" onChange={this.handleOnChange}
                        value={this.state.cantidad}/>
                 <button type="submit" className="btn btn-success">Actualizar</button>
             </form>
+
         );
     }
 }

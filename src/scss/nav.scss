@@ -16,7 +16,9 @@
                 display: inline-block;
                 height: 100%;
                 background: $dark;
-                border: black solid 1px;
+                border: none;
+                border-bottom: #323232 groove 3px; border-right: #323232 ridge 3px;
+
 
 
             }
