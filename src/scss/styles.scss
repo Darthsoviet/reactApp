@@ -2,7 +2,7 @@
 @import "nav.scss";
 @import "list.scss";
 @import "footer.scss";
-@import "formularioLog";
+@import "formularioLog.scss";
 
 $gris-oscuro: #222222;
 $gris: #323232;
@@ -19,6 +19,21 @@ $letra:white;
   padding: 0;
 
   color: white;
+  
+}
+::-webkit-scrollbar{
+  background: $dark;
+  width: 4px;
+}
+::-webkit-scrollbar-thumb{
+  width: 4px;
+  
+  color: $accept;
+  background: $warnin;
+  border-radius: 5px;
+}
+body{
+  background: #000;
 }
 
 #root {
@@ -507,5 +522,5 @@ $letra:white;
 @include form-add($gris, $gris-oscuro, $accept, $accept-hover, $warnin, $warnin-hover,$letra);
 @include nav($gris-claro, $gris-oscuro, $dark, $accept,$letra);
 @include list($gris, $gris-oscuro, $dark, $accept, $warnin,$very-dark,$letra);
-@include formularioLog($very-dark,$dark,$gris-oscuro,$accept,$warnin);
+@include formularioLog($very-dark,$dark,$gris-oscuro,$accept,$warnin,$accept-hover);
 //ipad pro

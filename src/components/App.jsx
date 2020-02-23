@@ -8,13 +8,13 @@ import Lista from "./Lista";
 import Footer from "./Footer";
 import FormularioLogModal from "./FormularioLogModal";
 import Header from "./Header";
-
+import  'whatwg-fetch'; 
 
 class App extends React.Component {
     constructor() {
         super()
         this.state = {
-            items: [],
+            items: "loading",
             oscuro: true,
             logShow: false,
             usuario: null
@@ -36,27 +36,28 @@ class App extends React.Component {
 
     agregarUsuarioSesion(usuario) {
 
-        this.setState({usuario: usuario});
+        this.setState({ usuario: usuario });
     }
 
     update() {
         fetch("http://localhost:8080/AppTiendas/api/item",
-            {method: "GET"})
+            { method: "GET" })
             .then((res) => {
                 console.log(res.status);
                 return res.json()
             })
-            .catch((err) => {
-                this.setState({items: null})
-            })
+
             .then(json => {
                 this.drawLista(json);
+            }).catch((err) => {
+                this.setState({ items: null })
+
             });
     }
 
     /* recibe un parametro que es una lista json y la mete al estado*/
     drawLista(json) {
-        this.setState({items: json})
+        this.setState({ items: json })
     }
 
     /* se encarga de que al momento de que la pagina cargue y renderise el componente cargue la lista de items*/
@@ -67,7 +68,7 @@ class App extends React.Component {
 
     /* Hace un ajax de tipo delete al servidor de glassfish */
     quitarElemento(id) {
-        fetch("http://localhost:8080/AppTiendas/api/item?idItem=" +id, {method: "delete"})
+        fetch("http://localhost:8080/AppTiendas/api/item?idItem=" + id, { method: "delete" })
             .then((res) => {
                 console.log(res.json());
             })
@@ -79,11 +80,11 @@ class App extends React.Component {
         if (!this.state.logShow) {
             const form = document.getElementsByName("modal")[0];
             form.style.display = "block";
-            this.setState({logShow: true});
+            this.setState({ logShow: true });
         } else {
             const form = document.getElementsByName("modal")[0];
             form.style.display = "none";
-            this.setState({logShow: false});
+            this.setState({ logShow: false });
         }
     }
 
@@ -94,20 +95,20 @@ class App extends React.Component {
             <div>
 
                 <FormularioLogModal desplegarFormularioLog={this.desplegarFormularioLog}
-                                    agregarUsuarioSesion={this.agregarUsuarioSesion}/>
+                    agregarUsuarioSesion={this.agregarUsuarioSesion} />
                 <div className="cuerpo-grid">
 
-                    <Header desplegarFormularioLog={this.desplegarFormularioLog} usuario={this.state.usuario}/>
-                    <Navigation nombre="Primer Pagina React" items={this.drawLista}/>
+                    <Header desplegarFormularioLog={this.desplegarFormularioLog} usuario={this.state.usuario} />
+                    <Navigation nombre="Primer Pagina React" items={this.drawLista} />
                     <aside>
-                        <AddForm title="Inserte Item" update={this.update}/>
+                        <AddForm title="Inserte Item" update={this.update} />
 
                     </aside>
                     <main>
                         <Lista items={this.state.items} eliminar={this.quitarElemento}
-                               update={this.update}/>
+                            update={this.update} />
                     </main>
-                    <Footer/>
+                    <Footer />
                 </div>
             </div>
         );

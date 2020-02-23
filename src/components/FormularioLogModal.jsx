@@ -21,7 +21,7 @@ class FormularioLogModal extends React.Component {
 
         var usuario = this.state.usuario;
         var contrasena = this.state.contrasena;
-        //todo Ajax
+        //TODO Ajax
 
         this.props.agregarUsuarioSesion(new Usuario(usuario,null,null,null,null,contrasena,null));
 
